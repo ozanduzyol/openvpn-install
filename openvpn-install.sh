@@ -200,14 +200,14 @@ else
 	esac
 	echo
 	echo "What port do you want OpenVPN listening to?"
-	read -p "Port: " -e -i 1194 PORT
+	read -p "Port: " -e -i 443 PORT
 	echo
 	echo "Which DNS do you want to use with the VPN?"
 	echo "   1) Current system resolvers"
 	echo "   2) 1.1.1.1"
 	echo "   3) Google"
 	echo "   4) OpenDNS"
-	echo "   5) Verisign"
+	echo "   5) Alternate DNS"
 	read -p "DNS [1-5]: " -e -i 1 DNS
 	echo
 	echo "Finally, tell me your name for the client certificate."
@@ -298,8 +298,8 @@ ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
 		echo 'push "dhcp-option DNS 208.67.220.220"' >> /etc/openvpn/server.conf
 		;;
 		5)
-		echo 'push "dhcp-option DNS 64.6.64.6"' >> /etc/openvpn/server.conf
-		echo 'push "dhcp-option DNS 64.6.65.6"' >> /etc/openvpn/server.conf
+		echo 'push "dhcp-option DNS 23.253.163.53"' >> /etc/openvpn/server.conf
+		echo 'push "dhcp-option DNS 198.101.242.72"' >> /etc/openvpn/server.conf
 		;;
 	esac
 	echo "keepalive 10 120
