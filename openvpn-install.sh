@@ -199,7 +199,7 @@ else
 	echo "   2) 1.1.1.1"
 	echo "   3) Google"
 	echo "   4) OpenDNS"
-	echo "   5) AlternateDNS"
+	echo "   5) NordVPN"
 	read -p "DNS [1-5]: " -e -i 1 DNS
 	echo
 	echo "Finally, tell me your name for the client certificate."
@@ -282,8 +282,8 @@ ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
 		echo 'push "dhcp-option DNS 208.67.220.220"' >> /etc/openvpn/server.conf
 		;;
 		5)
-		echo 'push "dhcp-option DNS 23.253.163.53"' >> /etc/openvpn/server.conf
-		echo 'push "dhcp-option DNS 198.101.242.72"' >> /etc/openvpn/server.conf
+		echo 'push "dhcp-option DNS 103.86.96.100"' >> /etc/openvpn/server.conf
+		echo 'push "dhcp-option DNS 103.86.99.100"' >> /etc/openvpn/server.conf
 		;;
 	esac
 	echo "keepalive 10 120
